@@ -1,138 +1,18 @@
 {
-  "version": "0.1.0-demo",
-  "reviewDate": "2026-10-26 — estrutura inicial; base não validada integralmente",
-  "entries": [
-    {
-      "id": "ctb-source",
-      "title": "Código de Trânsito Brasileiro — fonte oficial",
-      "summary": "Lei nº 9.503/1997, compilada na página oficial da Presidência da República. Use a fonte original para conferir a redação vigente de cada dispositivo.",
-      "article": "Lei nº 9.503/1997 — CTB",
-      "code": "Não se aplica",
-      "nature": "Não se aplica",
-      "penalty": "Não se aplica",
-      "measure": "Não se aplica",
-      "keywords": [
-        "ctb",
-        "código de trânsito",
-        "lei",
-        "9503",
-        "legislação",
-        "artigo",
-        "inciso",
-        "parágrafo"
-      ],
-      "type": "fonte",
-      "status": "FONTE OFICIAL",
-      "sourceTitle": "Presidência da República — CTB compilado",
-      "sourceUrl": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm",
-      "validity": "Consulte a versão compilada e as alterações posteriores publicadas oficialmente.",
-      "reviewDate": "Link de referência registrado em 2026-10-26",
-      "disclaimer": "A página oficial deve ser consultada para confirmar a redação vigente."
-    },
-    {
-      "id": "mbft-source",
-      "title": "Manual Brasileiro de Fiscalização de Trânsito (MBFT)",
-      "summary": "Fonte de referência para fichas de enquadramento, procedimentos, constatação e orientações sobre autuação. Esta versão não contém todas as fichas do manual.",
-      "article": "Resolução CONTRAN nº 985/2022 e alterações",
-      "code": "Consultar ficha oficial",
-      "nature": "Não validada nesta versão",
-      "penalty": "Consultar ficha vigente",
-      "measure": "Consultar ficha vigente",
-      "keywords": [
-        "mbft",
-        "manual",
-        "ficha",
-        "enquadramento",
-        "código",
-        "fiscalização",
-        "autuação"
-      ],
-      "type": "fonte",
-      "status": "FONTE OFICIAL — BASE NÃO COMPLETA",
-      "sourceTitle": "Ministério dos Transportes / SENATRAN — Manuais de fiscalização",
-      "sourceUrl": "https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-Senatran/manuais-de-fiscalizacao-sinalizacao-e-polos-geradores-de-trafego",
-      "validity": "Verificar alterações e datas de vigência dos anexos da Resolução CONTRAN nº 985/2022.",
-      "reviewDate": "Link de referência registrado em 2026-10-26",
-      "disclaimer": "Não utilizar esta ficha genérica como enquadramento de uma ocorrência."
-    },
-    {
-      "id": "contran-source",
-      "title": "Resoluções do CONTRAN — consulta de vigência",
-      "summary": "Página oficial para conferir resoluções, situação normativa, atos que alteram ou revogam normas e datas de vigência.",
-      "article": "Resoluções CONTRAN",
-      "code": "Consultar ato específico",
-      "nature": "Não se aplica",
-      "penalty": "Não se aplica",
-      "measure": "Não se aplica",
-      "keywords": [
-        "contran",
-        "resolução",
-        "vigência",
-        "revogada",
-        "alteração",
-        "atualização",
-        "norma"
-      ],
-      "type": "fonte",
-      "status": "FONTE OFICIAL",
-      "sourceTitle": "Ministério dos Transportes — Resoluções CONTRAN",
-      "sourceUrl": "https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-Senatran/resolucoes-contran",
-      "validity": "A situação e a vigência devem ser verificadas no ato oficial e em suas alterações.",
-      "reviewDate": "Link de referência registrado em 2026-10-26",
-      "disclaimer": "A lista de resoluções deve ser conferida antes de decidir sobre um enquadramento."
-    },
-    {
-      "id": "competence-note",
-      "title": "Competência para fiscalização — verificar o caso concreto",
-      "summary": "A competência depende do dispositivo, da atribuição legal, da circunscrição e de eventuais convênios/delegações aplicáveis. A simples indicação de um artigo não resolve sozinha a competência do órgão.",
-      "article": "CTB, especialmente arts. 22, 24, 24-A e 25, conforme o caso",
-      "code": "Não se aplica",
-      "nature": "Não se aplica",
-      "penalty": "Não se aplica",
-      "measure": "Não se aplica",
-      "keywords": [
-        "competência",
-        "municipal",
-        "órgão",
-        "circunscrição",
-        "convênio",
-        "delegação",
-        "artigo 24",
-        "artigo 24-a"
-      ],
-      "type": "orientação",
-      "status": "ORIENTAÇÃO GERAL — NÃO É PARECER",
-      "sourceTitle": "CTB compilado — Presidência da República",
-      "sourceUrl": "https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm",
-      "validity": "Consultar a redação vigente do CTB e os atos/convênios do órgão competente.",
-      "reviewDate": "Registro inicial em 2026-10-26",
-      "disclaimer": "Esta nota não substitui a verificação da competência específica do órgão e do agente."
-    },
-    {
-      "id": "example-not-ticket",
-      "title": "Exemplo de pesquisa — estacionamento sobre calçada",
-      "summary": "Entrada de demonstração para testar a busca. Não contém enquadramento certificado nem dados suficientes para uso em autuação. A versão final deverá carregar a ficha oficial vigente e suas condições de aplicação.",
-      "article": "Consultar CTB art. 181 e ficha MBFT aplicável na versão vigente",
-      "code": "NÃO INFORMADO — validar na ficha oficial",
-      "nature": "NÃO VALIDADA",
-      "penalty": "NÃO VALIDADA",
-      "measure": "NÃO VALIDADA",
-      "keywords": [
-        "estacionamento",
-        "calçada",
-        "passeio",
-        "veículo",
-        "parado",
-        "parada",
-        "estacionar"
-      ],
-      "type": "exemplo",
-      "status": "EXEMPLO — NÃO USAR PARA AUTUAR",
-      "sourceTitle": "CTB compilado e MBFT/SENATRAN — confirmar a ficha atual",
-      "sourceUrl": "https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-Senatran/manuais-de-fiscalizacao-sinalizacao-e-polos-geradores-de-trafego",
-      "validity": "Não verificada nesta versão demonstrativa.",
-      "reviewDate": "2026-10-26",
-      "disclaimer": "Este registro existe somente para demonstrar a interface e a pesquisa offline."
-    }
+  "schemaVersion": 1,
+  "lastReviewed": "2026-10-27",
+  "notice": "Base inicial de demonstração, não é um catálogo integral do CTB/MBFT. Confirme enquadramento, código, desdobramento, competência e vigência nas fontes oficiais antes de autuar.",
+  "sources": [
+    {"title":"Código de Trânsito Brasileiro — texto compilado","url":"https://planalto.gov.br/ccivil_03/leis/l9503compilado.htm","type":"lei federal","scope":"federal"},
+    {"title":"Resoluções do CONTRAN — página oficial","url":"https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-Senatran/resolucoes-contran","type":"normas e atualizações","scope":"federal"},
+    {"title":"MBFT — Resolução CONTRAN nº 985/2022 e alterações","url":"https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-Senatran/resolucoes-contran","type":"manual e fichas de enquadramento","scope":"federal"}
+  ],
+  "records": [
+    {"id":"ctb-181-xviii","title":"Estacionar sobre passeio ou faixa de pedestres","article":"CTB, art. 181, VIII","code":"545-21 (referência a conferir)","nature":"Grave","penalty":"Multa","measure":"Remoção do veículo, nos termos do dispositivo legal","description":"Estacionar o veículo no passeio, sobre faixa destinada a pedestre, ciclovia ou ciclofaixa, bem como nas ilhas, refúgios, ao lado ou sobre canteiros centrais, divisores de pista de rolamento, marcas de canalização, gramados ou jardim público.","keywords":["calçada","passeio","faixa de pedestres","estacionar","ciclofaixa","ciclovia","canteiro"],"scope":"federal","status":"Requer conferência do código/desdobramento e da ficha MBFT vigente","source":"https://planalto.gov.br/ccivil_03/leis/l9503compilado.htm","notes":"A descrição e o enquadramento devem ser cotejados com a redação atual do CTB e a ficha vigente do MBFT. A hipótese depende da situação concreta e da distinção entre parar e estacionar."},
+    {"id":"ctb-167","title":"Deixar de usar cinto de segurança","article":"CTB, art. 167","code":"518-51 (referência a conferir)","nature":"Grave","penalty":"Multa","measure":"Retenção do veículo até colocação do cinto pelo infrator, conforme o CTB","description":"Deixar o condutor ou passageiro de usar o cinto de segurança, conforme previsto no art. 65.","keywords":["cinto","segurança","passageiro","condutor","sem cinto"],"scope":"federal","status":"Requer conferência do código/desdobramento e da ficha MBFT vigente","source":"https://planalto.gov.br/ccivil_03/leis/l9503compilado.htm","notes":"Verifique as circunstâncias e a ficha oficial de enquadramento aplicável."},
+    {"id":"ctb-252-vi","title":"Dirigir utilizando telefone celular","article":"CTB, art. 252, VI e parágrafo único","code":"763-31 (referência a conferir)","nature":"Gravíssima quando segura ou manuseia telefone celular","penalty":"Multa","measure":"Sem medida administrativa específica indicada no art. 252 para esta conduta","description":"Dirigir veículo utilizando-se de telefone celular. O CTB também prevê tratamento específico para segurar ou manusear telefone celular.","keywords":["celular","telefone","smartphone","dirigindo","manuseando celular","segurando celular"],"scope":"federal","status":"Requer conferência da situação e da ficha MBFT vigente","source":"https://planalto.gov.br/ccivil_03/leis/l9503compilado.htm","notes":"Distinguir a conduta observada e usar o código correspondente à hipótese exata na tabela vigente."},
+    {"id":"ctb-244-i","title":"Conduzir motocicleta sem capacete de segurança","article":"CTB, art. 244, I","code":"703-01 (referência a conferir)","nature":"Gravíssima","penalty":"Multa e suspensão do direito de dirigir, conforme o dispositivo","measure":"Retenção do veículo até regularização e recolhimento do documento de habilitação, conforme a redação legal aplicável","description":"Conduzir motocicleta, motoneta ou ciclomotor sem usar capacete de segurança ou vestuário de acordo com as normas e especificações aprovadas pelo CONTRAN.","keywords":["moto","motocicleta","capacete","sem capacete","motoneta","ciclomotor"],"scope":"federal","status":"Requer conferência do código/desdobramento e da ficha MBFT vigente","source":"https://planalto.gov.br/ccivil_03/leis/l9503compilado.htm","notes":"Confirme a categoria do veículo, a conduta e as medidas aplicáveis no texto vigente e no MBFT."},
+    {"id":"ctb-169","title":"Dirigir sem atenção ou sem os cuidados indispensáveis à segurança","article":"CTB, art. 169","code":"520-70 (referência a conferir)","nature":"Leve","penalty":"Multa","measure":"Não há medida administrativa expressa no art. 169","description":"Dirigir sem atenção ou sem os cuidados indispensáveis à segurança.","keywords":["sem atenção","distraído","cuidados indispensáveis","condução insegura"],"scope":"federal","status":"Requer análise dos fatos; evitar enquadramento genérico quando houver tipo específico","source":"https://planalto.gov.br/ccivil_03/leis/l9503compilado.htm","notes":"O relato deve descrever fatos observáveis. Avalie se existe infração específica mais adequada."},
+    {"id":"municipal-placeholder","title":"Normas municipais de circulação e estacionamento","article":"Norma municipal específica — não cadastrada","code":"A definir após validação da norma local","nature":"Depende da norma","penalty":"Depende da norma","measure":"Depende da norma","description":"Esta ficha é um lembrete para consultar atos municipais válidos, regulamentação de estacionamento, sinalização e atos da autoridade com circunscrição sobre a via. Não representa um enquadramento autuável.","keywords":["municipal","regulamentação local","estacionamento rotativo","sinalização local","Eusébio"],"scope":"municipal","status":"INFORMATIVO — norma local ainda não validada nesta versão","source":"https://www.eusebio.ce.gov.br/","notes":"Não utilizar esta ficha para lavrar auto de infração. Incluir somente após identificar e conferir o ato oficial e sua vigência."}
   ]
 }
