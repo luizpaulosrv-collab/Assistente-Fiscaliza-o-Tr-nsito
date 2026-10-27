@@ -1,23 +1,23 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#123b36"><meta name="description" content="Assistente de consulta para fiscalização de trânsito, com referências legais e consulta offline.">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#10263d"><meta name="description" content="Assistente de consulta para fiscalização de trânsito, com referências legais e consulta offline.">
 <link rel="manifest" href="./manifest.webmanifest"><link rel="icon" href="./icons/icon-192.png"><link rel="stylesheet" href="./styles.css"><title>Assistente de Fiscalização de Trânsito</title>
 </head>
 <body>
-<header class="topbar"><div class="brandmark">AT</div><div class="brand"><strong>Assistente de Fiscalização</strong><span>TRÂNSITO • CONSULTA DE CAMPO</span></div><button id="installBtn" class="small-btn hidden" aria-label="Instalar aplicativo">Instalar</button></header>
+<header class="topbar"><div class="brandmark">AT</div><div class="brand"><strong>Assistente de Fiscalização</strong><span>SISTEMA DE APOIO À FISCALIZAÇÃO • EUSÉBIO/CE</span></div><button id="installBtn" class="small-btn hidden" aria-label="Instalar aplicativo">Instalar</button></header>
 <main>
-<section class="hero"><div class="eyebrow">CONSULTA RÁPIDA</div><h1>O que você encontrou<br>na via?</h1><p>Descreva a situação ou pesquise por artigo, código ou palavra-chave.</p>
+<section class="hero"><div class="eyebrow">CONSULTA RÁPIDA</div><h1>Consulta de campo<br>de trânsito</h1><p>Pesquise a conduta observada, artigo do CTB, código de enquadramento ou palavra-chave.</p>
 <form id="searchForm" class="searchbox"><textarea id="searchInput" rows="2" placeholder="Ex.: veículo estacionado sobre a calçada…" aria-label="Descreva a situação ou informe artigo/código"></textarea><div class="search-actions"><button type="button" id="voiceBtn" class="icon-btn" title="Pesquisar por voz" aria-label="Pesquisar por voz">🎙️ <span>Falar</span></button><button class="primary-btn" type="submit">Pesquisar <span>↗</span></button></div></form>
 <div class="chips"><button class="chip" data-query="estacionar sobre a calçada">Estacionamento</button><button class="chip" data-query="cinto de segurança">Cinto</button><button class="chip" data-query="celular ao dirigir">Celular</button><button class="chip" data-query="sem capacete">Capacete</button></div></section>
-<section class="toolbar"><div><h2 id="resultsHeading">Consultas frequentes</h2><p id="resultsSub">Exemplos iniciais — confira sempre a norma vigente.</p></div><select id="scopeSelect" aria-label="Abrangência da consulta"><option value="all">Federal + municipal</option><option value="federal">Somente federal</option><option value="municipal">Municipal</option></select></section>
+<section class="toolbar"><div><h2 id="resultsHeading">Pesquisa de enquadramentos</h2><p id="resultsSub">Base demonstrativa: confira a norma vigente antes de qualquer autuação.</p></div><select id="scopeSelect" aria-label="Abrangência da consulta"><option value="all">Federal + Eusébio</option><option value="federal">Somente federal</option><option value="municipal">Municipal</option></select></section>
 <div id="results" class="results" aria-live="polite"></div>
 <section id="detailPanel" class="detail-panel hidden" aria-live="polite"></section>
 <section class="utility-grid"><button class="utility" id="savedBtn"><span>☆</span><b>Favoritos</b><small>Infrações salvas</small></button><button class="utility" id="historyBtn"><span>◷</span><b>Histórico</b><small>Consultas recentes</small></button><button class="utility" id="backupBtn"><span>⇅</span><b>Backup</b><small>Exportar dados</small></button><button class="utility" id="aboutBtn"><span>ⓘ</span><b>Sobre a base</b><small>Fontes e limites</small></button></section>
-<section class="municipal-box"><div><span class="eyebrow">ÂMBITO MUNICIPAL</span><h2>Regras locais</h2><p>Selecione o município para organizar as consultas locais. Normas municipais precisam ser incluídas e verificadas individualmente antes de orientar uma autuação.</p></div><label>Município<input id="municipality" value="Eusébio - CE" autocomplete="address-level2"></label><button id="saveMunicipality" class="secondary-btn">Salvar</button></section>
+<section class="municipal-box"><div><span class="eyebrow">ÂMBITO MUNICIPAL</span><h2>Normas municipais de Eusébio</h2><p>Atos locais identificados são referências institucionais, não enquadramentos autuáveis por si só. Normas específicas de circulação, sinalização e estacionamento exigem conferência de vigência e aplicabilidade.</p></div><label>Município<input id="municipality" value="Eusébio - CE" autocomplete="address-level2"></label><button id="saveMunicipality" class="secondary-btn">Salvar</button></section>
 <div id="notice" class="notice" role="status"></div>
 </main>
-<footer><p>Ferramenta de apoio à consulta. A decisão de autuar exige conferência dos fatos, sinalização, competência e norma vigente.</p><span id="offlineStatus">Preparando consulta offline…</span></footer>
+<footer><p>Ferramenta de apoio à consulta. A decisão de autuar exige conferência dos fatos, sinalização, competência e norma vigente.</p><span id="offlineStatus">Modo offline disponível após o primeiro carregamento; a base jurídica permanece parcial.</span></footer>
 <input id="importFile" type="file" accept="application/json" class="hidden">
 <dialog id="modal"><div class="modal-head"><h2 id="modalTitle">Informações</h2><button id="closeModal" aria-label="Fechar">✕</button></div><div id="modalContent"></div></dialog>
 <script src="./app.js" defer></script>

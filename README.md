@@ -1,27 +1,35 @@
-# Assistente de Fiscalização de Trânsito — versão inicial funcional
+# Assistente de Fiscalização de Trânsito — versão visual reformulada
 
-PWA estático, sem dependências externas. Interface responsiva, pesquisa textual local, resultados por relevância, fichas detalhadas, favoritos, histórico, exportação de backup, tentativa de reconhecimento de voz e cache offline.
+## Publicação no GitHub Pages
+Envie os arquivos e pastas deste pacote para a raiz do repositório existente, mantendo esta estrutura:
+- `index.html`
+- `styles.css`
+- `app.js`
+- `manifest.webmanifest`
+- `service-worker.js`
+- `data/legal-data.json`
+- `icons/icon-192.png` e `icons/icon-512.png`
 
-## Atenção jurídica
-Esta entrega é uma base funcional de aplicativo, **não uma base jurídica integral nem certificada para autuação**. O arquivo `data/legal-data.json` contém somente fichas demonstrativas. Códigos e desdobramentos estão explicitamente marcados para conferência. Não use os exemplos como confirmação autônoma de enquadramento. Antes de uso operacional, é necessário importar e conferir todas as fichas do MBFT vigente, resoluções que as alterem, tabela oficial de códigos, texto compilado do CTB e normas municipais aplicáveis.
+Não renomeie as pastas `data` e `icons`. Depois de publicar, abra o site e atualize/reinstale o PWA se o navegador continuar mostrando arquivos em cache.
 
-Fontes de referência:
+## Recursos preservados
+- Busca local por termos, artigos e códigos cadastrados
+- Pesquisa por voz quando suportada pelo navegador
+- Favoritos e histórico armazenados localmente
+- Exportação de backup
+- Consulta de fontes oficiais
+- Cache para uso offline após o primeiro carregamento
+
+## Limite jurídico importante
+Esta entrega reformula a interface e melhora o catálogo de fontes oficiais, mas **não constitui uma base integral do CTB/MBFT e não está validada para uso autônomo em autuações**. Os registros de infrações existentes são demonstrativos; os códigos e desdobramentos marcados para conferência não devem ser tratados como confirmados.
+
+Foram incluídas referências oficiais ao CTB compilado, catálogo de resoluções do CONTRAN, Resolução CONTRAN 985/2022 e alterações, Resolução 1.031/2026, e portal oficial de legislação de Eusébio. O portal municipal contém atos institucionais da AMT/JARI, mas a identificação e revisão integral das regras locais de circulação, estacionamento, sinalização e eventuais alterações ainda precisa ser concluída. A existência de uma lei municipal institucional não prova um enquadramento específico.
+
+Antes de usar uma ficha para lavrar auto, confira na fonte oficial: descrição da conduta, artigo, código e desdobramento vigente, natureza, penalidade, medida administrativa, requisitos/observações do MBFT, sinalização e competência do órgão/agente. Para a validação final, recomenda-se revisão por responsável jurídico ou especialista em legislação de trânsito.
+
+## Fontes
 - CTB: https://planalto.gov.br/ccivil_03/leis/l9503compilado.htm
 - Resoluções CONTRAN: https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-Senatran/resolucoes-contran
-- Portal do Município de Eusébio: https://www.eusebio.ce.gov.br/
-
-## Publicar no GitHub Pages
-1. Descompacte o ZIP.
-2. Envie **o conteúdo da pasta** para a raiz do repositório, preservando as pastas `data/` e `icons/`.
-3. Confirme estes caminhos: `data/legal-data.json`, `icons/icon-192.png` e `icons/icon-512.png`.
-4. Em Settings → Pages, escolha Deploy from a branch, branch `main`, pasta `/(root)` e salve.
-5. Aguarde o workflow Pages terminar. Depois abra o endereço indicado em Settings → Pages.
-
-## Instalação e offline
-Abra a URL HTTPS no navegador do celular e use a opção do navegador para adicionar à tela inicial. Abra uma vez com internet para armazenar os arquivos no cache. O conteúdo jurídico disponível offline é apenas o que estiver incluído em `data/legal-data.json`.
-
-## Privacidade e IA
-Consultas e favoritos ficam no armazenamento local do navegador. Esta versão não envia relatos para uma IA online. Para adicionar IA, crie um backend protegido; não publique chaves de API em `app.js` ou em repositório público.
-
-## Atualização jurídica
-`lastReviewed` é a data de preparação da base inicial, não uma certificação de que todas as normas foram verificadas. Atualize e versiona a base somente após conferência das fontes oficiais e das datas de vigência.
+- Lei Municipal nº 4/2009 (AMT/JARI): https://www.eusebio.ce.gov.br/leis.php?id=2042
+- Normativos municipais: https://www.eusebio.ce.gov.br/normativosproprios.php?pagina=42
+- AMT Eusébio: https://www.eusebio.ce.gov.br/secretaria.php?sec=5
