@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#10243a">
+  <meta name="description" content="Assistente de consulta de legislação e fiscalização de trânsito.">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icons/icon-192.png">
+  <link rel="stylesheet" href="./styles.css">
+  <title>Assistente de Fiscalização</title>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-mark" aria-hidden="true">AT</div>
+    <div class="brand-copy">
+      <strong>Assistente de Fiscalização</strong>
+      <span>Consulta de trânsito • versão inicial</span>
+    </div>
+    <button id="installBtn" class="icon-btn" hidden aria-label="Instalar aplicativo" title="Instalar aplicativo">＋</button>
+  </header>
+
+  <main class="page">
+    <section class="notice" role="note">
+      <strong>Versão inicial para testes</strong>
+      <p>A base jurídica desta versão é demonstrativa e incompleta. Confirme sempre o enquadramento na legislação e nas fichas oficiais vigentes antes de qualquer autuação.</p>
+    </section>
+
+    <section class="hero">
+      <p class="eyebrow">CONSULTA RÁPIDA</p>
+      <h1>O que aconteceu no trânsito?</h1>
+      <p>Descreva a situação ou pesquise por artigo, código ou palavra-chave.</p>
+      <form id="searchForm" class="search-box">
+        <label class="sr-only" for="query">Descreva a situação ou pesquise na base</label>
+        <textarea id="query" rows="3" placeholder="Ex.: veículo estacionado sobre a calçada…" autocomplete="off"></textarea>
+        <div class="search-actions">
+          <button type="button" id="voiceBtn" class="secondary-btn"><span aria-hidden="true">🎙</span> Falar</button>
+          <button type="submit" class="primary-btn"><span aria-hidden="true">⌕</span> Pesquisar</button>
+        </div>
+        <p id="voiceStatus" class="muted small" aria-live="polite"></p>
+      </form>
+      <div class="quick-chips" aria-label="Pesquisas sugeridas">
+        <button class="chip" data-query="estacionamento sobre calçada">Estacionamento</button>
+        <button class="chip" data-query="uso de celular ao dirigir">Celular ao dirigir</button>
+        <button class="chip" data-query="álcool recusa teste">Álcool / recusa</button>
+        <button class="chip" data-query="competência municipal">Competência municipal</button>
+      </div>
+    </section>
+
+    <section class="results-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">BASE LOCAL</p>
+          <h2 id="resultsTitle">Pesquisar na base</h2>
+        </div>
+        <span id="resultCount" class="count-pill">0 resultados</span>
+      </div>
+      <div id="results" class="results-list">
+        <div class="empty-state">
+          <span class="empty-icon">⌕</span>
+          <strong>Pronto para pesquisar</strong>
+          <p>Os resultados locais funcionam quando o aplicativo está offline, usando os dados já instalados no aparelho.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="ai-panel">
+      <div class="ai-heading">
+        <div class="ai-symbol">✦</div>
+        <div>
+          <p class="eyebrow">ASSISTENTE ONLINE</p>
+          <h2>Análise com inteligência artificial</h2>
+        </div>
+      </div>
+      <p>A IA poderá interpretar a ocorrência, solicitar fatos que faltam e comparar hipóteses com as fontes oficiais. Nesta versão inicial, a conexão com IA ainda não está configurada.</p>
+      <div class="ai-status"><span class="status-dot"></span><span id="aiStatus">Integração pendente — requer backend seguro</span></div>
+      <button id="aiBtn" class="secondary-btn wide" disabled>Configurar IA online na próxima etapa</button>
+    </section>
+
+    <section class="two-cards">
+      <button class="mini-card" id="savedTab">
+        <span class="mini-icon">☆</span><span><strong>Favoritos</strong><small>Consultas salvas neste aparelho</small></span><span class="arrow">›</span>
+      </button>
+      <button class="mini-card" id="historyTab">
+        <span class="mini-icon">◷</span><span><strong>Histórico</strong><small>Pesquisas recentes neste aparelho</small></span><span class="arrow">›</span>
+      </button>
+    </section>
+
+    <section class="sources-panel">
+      <p class="eyebrow">FONTES OFICIAIS</p>
+      <h2>Consulte a norma original</h2>
+      <a href="https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm" target="_blank" rel="noopener noreferrer">CTB compilado — Presidência da República <span>↗</span></a>
+      <a href="https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-Senatran/resolucoes-contran" target="_blank" rel="noopener noreferrer">Resoluções CONTRAN — Ministério dos Transportes <span>↗</span></a>
+      <a href="https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-Senatran/manuais-de-fiscalizacao-sinalizacao-e-polos-geradores-de-trafego" target="_blank" rel="noopener noreferrer">Manuais de fiscalização — SENATRAN <span>↗</span></a>
+      <p class="muted small">A disponibilidade de páginas oficiais e a vigência das normas devem ser verificadas na fonte original. O aplicativo não confirma automaticamente que a base está atualizada.</p>
+    </section>
+
+    <section class="data-panel">
+      <div>
+        <p class="eyebrow">ESTADO DA BASE</p>
+        <h2>Dados jurídicos locais</h2>
+      </div>
+      <div class="data-row"><span>Pacote local</span><strong id="datasetVersion">Carregando…</strong></div>
+      <div class="data-row"><span>Última revisão registrada</span><strong id="datasetDate">—</strong></div>
+      <div class="data-row"><span>Modo offline</span><strong id="offlineState">Verificando…</strong></div>
+      <button id="exportBtn" class="secondary-btn wide">Exportar favoritos e histórico</button>
+      <label class="secondary-btn wide import-label">Importar backup JSON<input type="file" id="importInput" accept="application/json,.json" hidden></label>
+      <button id="clearBtn" class="danger-btn wide">Apagar dados locais</button>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Navegação principal">
+    <button class="nav-item active" data-nav="home"><span>⌂</span><small>Início</small></button>
+    <button class="nav-item" data-nav="search"><span>⌕</span><small>Pesquisar</small></button>
+    <button class="nav-item" data-nav="saved"><span>☆</span><small>Salvos</small></button>
+    <button class="nav-item" data-nav="sources"><span>▤</span><small>Fontes</small></button>
+  </nav>
+
+  <dialog id="detailDialog" class="detail-dialog">
+    <div class="dialog-top"><span class="eyebrow">DETALHES DA CONSULTA</span><button id="closeDialog" class="icon-btn" aria-label="Fechar">×</button></div>
+    <div id="detailContent"></div>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="./app.js" defer></script>
+</body>
+</html>
