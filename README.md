@@ -1,50 +1,27 @@
-# Assistente de Fiscalização de Trânsito — PWA inicial
+# Assistente de Fiscalização de Trânsito — versão inicial funcional
 
-## O que esta versão já faz
-- Interface responsiva para celular e desktop.
-- Estrutura PWA com manifest e service worker.
-- Cache local do shell e dos dados demonstrativos depois da primeira carga online.
-- Busca local por texto em títulos, descrições, artigos, códigos e palavras-chave.
-- Pesquisa por voz quando o navegador oferece `SpeechRecognition`/`webkitSpeechRecognition`.
-- Favoritos e histórico no `localStorage` do aparelho.
-- Exportação e importação de backup JSON.
-- Links para fontes oficiais do CTB, CONTRAN e SENATRAN.
-- Avisos explícitos sobre registros demonstrativos e dados ainda não validados.
+PWA estático, sem dependências externas. Interface responsiva, pesquisa textual local, resultados por relevância, fichas detalhadas, favoritos, histórico, exportação de backup, tentativa de reconhecimento de voz e cache offline.
 
-## Limitações importantes
-Esta é uma **base de protótipo**, não uma base jurídica completa. `data/legal-data.json` contém registros de referência e um exemplo de busca; não contém o CTB integral, todas as resoluções vigentes nem todas as fichas do MBFT. Não use os registros demonstrativos para lavrar autos de infração.
+## Atenção jurídica
+Esta entrega é uma base funcional de aplicativo, **não uma base jurídica integral nem certificada para autuação**. O arquivo `data/legal-data.json` contém somente fichas demonstrativas. Códigos e desdobramentos estão explicitamente marcados para conferência. Não use os exemplos como confirmação autônoma de enquadramento. Antes de uso operacional, é necessário importar e conferir todas as fichas do MBFT vigente, resoluções que as alterem, tabela oficial de códigos, texto compilado do CTB e normas municipais aplicáveis.
 
-A IA online está intencionalmente desativada. O navegador não deve conter chaves secretas de API. A integração exige um backend/proxy seguro, autenticação, limites de uso, tratamento de erros e recuperação de fontes oficiais. O GitHub Pages é hospedagem estática e não executa esse backend.
-
-O cache offline só fica disponível depois que o app é carregado online pelo menos uma vez. O reconhecimento de voz pode depender de internet e varia por navegador; digitação permanece disponível.
+Fontes de referência:
+- CTB: https://planalto.gov.br/ccivil_03/leis/l9503compilado.htm
+- Resoluções CONTRAN: https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-Senatran/resolucoes-contran
+- Portal do Município de Eusébio: https://www.eusebio.ce.gov.br/
 
 ## Publicar no GitHub Pages
-1. Crie um repositório novo, por exemplo `assistente-fiscalizacao-transito`.
-2. Envie todos os arquivos e pastas deste pacote para a raiz do repositório.
-3. No GitHub, abra **Settings → Pages**.
-4. Em **Build and deployment**, selecione **Deploy from a branch**, branch `main`, pasta `/ (root)` e salve.
-5. Aguarde o endereço `https://SEU-USUARIO.github.io/assistente-fiscalizacao-transito/`.
-6. Abra o link online no celular antes de instalar/adicionar à tela inicial.
+1. Descompacte o ZIP.
+2. Envie **o conteúdo da pasta** para a raiz do repositório, preservando as pastas `data/` e `icons/`.
+3. Confirme estes caminhos: `data/legal-data.json`, `icons/icon-192.png` e `icons/icon-512.png`.
+4. Em Settings → Pages, escolha Deploy from a branch, branch `main`, pasta `/(root)` e salve.
+5. Aguarde o workflow Pages terminar. Depois abra o endereço indicado em Settings → Pages.
 
-## Antes de uso operacional
-1. Obter e estruturar o CTB e anexos a partir das fontes oficiais.
-2. Importar todas as fichas atuais do MBFT e registrar fonte, versão, data de publicação, início de vigência, revogações e alterações.
-3. Validar os códigos e campos por conferência automatizada e revisão humana.
-4. Criar pipeline de atualização com comparação de versões e histórico de alterações.
-5. Testar busca, modo offline e comportamento em iPhone/Android.
-6. Implementar backend seguro para IA, que recupere trechos oficiais e retorne citações, sem permitir que o modelo invente códigos.
-7. Realizar revisão jurídica e operacional com o órgão responsável antes de uso real.
+## Instalação e offline
+Abra a URL HTTPS no navegador do celular e use a opção do navegador para adicionar à tela inicial. Abra uma vez com internet para armazenar os arquivos no cache. O conteúdo jurídico disponível offline é apenas o que estiver incluído em `data/legal-data.json`.
 
-## Estrutura
-- `index.html` — interface
-- `styles.css` — estilos responsivos
-- `app.js` — busca, voz, favoritos, histórico e backup
-- `manifest.webmanifest` — metadados de instalação
-- `service-worker.js` — cache offline
-- `data/legal-data.json` — registros demonstrativos
-- `icons/` — ícones PWA
+## Privacidade e IA
+Consultas e favoritos ficam no armazenamento local do navegador. Esta versão não envia relatos para uma IA online. Para adicionar IA, crie um backend protegido; não publique chaves de API em `app.js` ou em repositório público.
 
-## Fontes oficiais de partida
-- CTB compilado: https://www.planalto.gov.br/ccivil_03/leis/l9503compilado.htm
-- Resoluções CONTRAN: https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-Senatran/resolucoes-contran
-- Manuais SENATRAN: https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-Senatran/manuais-de-fiscalizacao-sinalizacao-e-polos-geradores-de-trafego
+## Atualização jurídica
+`lastReviewed` é a data de preparação da base inicial, não uma certificação de que todas as normas foram verificadas. Atualize e versiona a base somente após conferência das fontes oficiais e das datas de vigência.
